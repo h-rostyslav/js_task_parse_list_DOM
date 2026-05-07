@@ -11,25 +11,26 @@ function sortList(list) {
 
   items.sort((a, b) => {
     return getSalary(b) - getSalary(a);
-  })
+  });
 
-  items.forEach(item => {
+  items.forEach((item) => {
     list.append(item);
-  })
+  });
 }
 
 function getEmployees(list) {
   const items = Array.from(list.children);
 
-  return items.map(item => {
+  return items.map((item) => {
     return {
       salary: Number(item.dataset.salary),
       age: Number(item.dataset.age),
       name: item.dataset.name,
       position: item.dataset.position,
-    }
-  })
+    };
+  });
 }
 
 sortList(listElement);
-const employees = getEmployees(listElement);
+
+getEmployees(listElement);
